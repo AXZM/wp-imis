@@ -1,12 +1,12 @@
 <?php
 session_start();
 /**
- * Plugin Name: iMIS Membership
+ * Plugin Name: WP-iMIS Membership
  * Plugin URI: http://axzm.com
  * Author: AXZM
  * Description: Restrict pages of your site to members only.  Works with iMIS.  Restrict to different types/roles/groups of members.
  * Author URI: http://www.axzm.com
- * Version: 2.1
+ * Version: 1.0
  */
 
 /**
@@ -150,7 +150,7 @@ class IMIS_MEMBERSHIP {
      *
      */
     function imis_membership_admin_pages_callback() {
-        add_menu_page('Membership', 'Membership', 'edit_themes', 'imis_membership', array( $this, 'imis_membership'));
+        add_menu_page('iMIS', 'iMIS', 'edit_themes', 'imis_membership', array( $this, 'imis_membership'));
     }
 
     /**

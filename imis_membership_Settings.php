@@ -26,7 +26,7 @@ class imis_membership_Settings {
 
         add_settings_section(
             'imis_membership_settings_section',         // ID used to identify this section and with which to register options
-            'Enable nonprofitCMS Membership',                  // Title to be displayed on the administration page
+            'Enable iMIS Membership',                  // Title to be displayed on the administration page
             array($this, 'imis_membership_settings_callback'), // Callback used to render the description of the section
             'imis_membership_setting'                           // Page on which to add this section of options
         );
@@ -82,14 +82,10 @@ class imis_membership_Settings {
         }
 
         $imisSelected = $val == 'iMIS 15' ? "selected" : "";
-
         $out = '<select id="imis_login_type" name="imis_membership_setting[imis_login_type]">';
         $out = $out.'<option value="">-- SELECT --</option>';
         $out = $out.'<option ' . $imisSelected . ' value="iMIS 15">iMIS 15</option>';
         $out = $out.'</select>';
-
-
-
         $out .= '<script> jQuery(document).ready(function (){ jQuery("#imis_login_type").change(function (){ if (jQuery("#imis_login_type").val() == "") { jQuery(".imis").closest("tr").hide(); jQuery(".member").closest("tr").hide();  } if (jQuery("#imis_login_type").val() == "MemberCMS") { jQuery(".imis").closest("tr").hide(); jQuery(".member").closest("tr").show();  } if (jQuery("#imis_login_type").val() == "iMIS 15") { jQuery(".member").closest("tr").hide(); jQuery(".imis").closest("tr").show();  } }); jQuery("#imis_login_type").change();}); </script>';
 
         echo $out;
