@@ -120,5 +120,11 @@
 
 				return $roleDictionary;
         }
+
+        function logout()
+        {
+        	$result = $this->client->Logout(array());
+        }
+
     }
 ?>

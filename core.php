@@ -73,7 +73,8 @@ class WordPressMembership
     function logoutUser() {
         if (!$this->client)
             return;
-
+        
+        $this->client->logout();
         unset($_SESSION['imis_auth_user']);
     }
 
